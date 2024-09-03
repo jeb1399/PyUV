@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Proxy</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>1Proxy | V-2.1</title>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/baremux/index.js"></script>
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", async () => {
+            await navigator.serviceWorker.register("/uv/sw.js");
+        });
+    }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%; z-index: -100000000000000; position: fixed;" width="1920" height="942"></canvas>
     <div class="container">
-        <h1>Simple Proxy</h1>
-        <input type="text" id="urlInput" placeholder="Enter URL to proxy">
-        <button onclick="loadUrl()">Load</button>
-        <div id="result"></div>
+        <form class="proxy-form">
+            <h1>1Proxy</h1>
+            <p>Now powered by Ultraviolet!</p>
+            <div class="input-group">
+                <input type="text" id="urlInput" placeholder="Enter URL here" autocapitalize="none aria-autocomplete="none">
+                <button id="searchButton">Search</button>
+            </div>
+            <select id="switcher">
+                <option value="epoxy">Epoxy</option>
+                <option value="bare">Bare</option>
+            </select>
+        </form>
     </div>
-    <script src="script.js"></script>
+    <script src="/stars.js"></script>
+    <script src="/particles.js"></script>
+    <script src="/themecontrol.js"></script>
+    <script src="/script.js"></script>
+    <footer><b class="version">V-2.1</b><a href="/about.html">About</a></footer>
 </body>
 </html>

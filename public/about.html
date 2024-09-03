@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1Proxy | About</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --text-primary: #e94560;
+            --text-secondary: #f1f1f1;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: rgba(22, 33, 62, 0.2);
+        }
+
+        h1 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            flex-shrink: 0;
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 97.8%;
+            margin: 0 auto;
+        }
+
+        footer .version {
+            color: var(--text-primary);
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="about-container">
+            <h1>1Proxy</h1>
+            <p>THIS IS THE ALL NEW VERSION OF 1PROXY</p>
+            <h2>Changes:</h2>
+            <ul>
+                <li>Now uses Ultraviolet proxy.</li>
+                <li>Uses NEW styles.</li>
+                <li>Opens in About:Blank.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <b class="version">V-2.1</b>
+        <a href="../">Home</a>
+    </footer>
+</body>
+</html>
