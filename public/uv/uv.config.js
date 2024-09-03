@@ -1,8 +1,10 @@
 self.__uv$config = {
     prefix: '/uv/service/',
-    bare: 'https://incog.dev/bare/',
+    bare: '/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
-    bundle: '/uv.bundle.js',
-    config: '/uv.config.js',
+    handler: '/uv/uv.handler.js',
+    bundle: '/uv/uv.bundle.js',
+    config: '/uv/uv.config.js',
+    sw: '/uv/uv.sw.js',
 };
