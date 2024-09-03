@@ -2,6 +2,6 @@
 #                        INSTALLATION
 -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
 
--~-~-~-~! DO NOT RUN SERVER.JS !-~-~-~-~
+ ### -~-~-~-~! DO NOT RUN SERVER.JS !-~-~-~-~
 
   ## Linux: `npm install -y; npm audit fix; python main.py`
