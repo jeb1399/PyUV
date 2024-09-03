@@ -48,15 +48,9 @@
             opacity: 0;
         }
 
-        @keyframes typeAndDelete {
-            0%, 100% { width: 0; opacity: 1; }
-            40%, 60% { width: 3ch; opacity: 1; }
-            70%, 80% {
-                width: 3ch;
-                opacity: 1;
-                background-color: var(--purple-dark);
-                color: var(--bg-dark);
-            }
+        @keyframes typeIn {
+            0% { width: 0; opacity: 1; }
+            100% { width: 3ch; opacity: 1; background-color: var(--purple-dark); color: var(--bg-dark); }
         }
 
         @keyframes fadeIn {
@@ -84,11 +78,7 @@
         const h1 = document.querySelector('h1');
 
         function animateH2() {
-            h2.style.animation = 'typeAndDelete 2s ease-in-out forwards';
-            setTimeout(() => {
-                h2.style.animation = 'none';
-                setTimeout(animateH2, 50);
-            }, 2000);
+            h2.style.animation = 'typeIn 1s ease-in-out forwards';
         }
 
         function animateH1() {
@@ -96,7 +86,7 @@
         }
 
         animateH2();
-        setTimeout(animateH1, 2500);
+        setTimeout(animateH1, 1125);
     </script>
 </body>
 </html>
