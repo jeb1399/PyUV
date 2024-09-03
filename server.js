@@ -1,16 +1,33 @@
-const http = require('http');
-const port = 8080;
+const express = require('express');
+const { createProxyMiddleware } = require('http-proxy-middleware');
+const path = require('path');
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write('Proxy Server Running');
-  res.end();
+const app = express();
+const port = 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/proxy', (req, res, next) => {
+  const targetUrl = req.query.url;
+
+  if (!targetUrl) {
+    return res.status(400).send('Target URL is required');
+  }
+
+  const proxy = createProxyMiddleware({
+    target: targetUrl,
+    changeOrigin: true,
+    pathRewrite: {
+      '^/proxy': '',
+    },
+    onProxyRes: function (proxyRes, req, res) {
+      proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+    }
+  });
+
+  proxy(req, res, next);
 });
 
-server.listen(port, (error) => {
-  if (error) {
-    console.log('Something went wrong', error);
-  } else {
-    console.log(`Server is listening on port ${port}`);
-  }
+app.listen(port, () => {
+  console.log(`Proxy server running at http://localhost:${port}`);
 });
